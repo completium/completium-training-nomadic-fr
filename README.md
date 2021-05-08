@@ -83,6 +83,8 @@ Parmis les éléments suivants d’une obligation à coupon zéro, 2 ne sont pas
 
 > Exercices : [vidéo](https://www.wevideo.com/view/2175183804)
 
+Documentation sur les [assets](https://docs.archetype-lang.org/archetype-language/data-model)
+
 Un token non fongible (non fungible token, NFT) est un token unique que l’on peut transférer d’un propriétaire à un autre.
 
 Le contrat [nft.arl](./contracts/nft.arl) implante un NFT en s’inspirant de la norme du FA 2 de Tezos pour les tokens non fongibles.
@@ -115,6 +117,8 @@ Ajouter des données au token :
 > Présentation : [vidéo](https://www.wevideo.com/view/2172439662)
 
 > Exercices : [vidéo](https://www.wevideo.com/view/2175193610)
+
+Documentation sur les [machines à état](https://docs.archetype-lang.org/archetype-language/state-machine)
 
 ## Exercice 1
 
