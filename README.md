@@ -96,7 +96,7 @@ Le point d’entrée transfer effectue le transfert de propriété du token en l
 ## Exercice 1
 
 Écrire le point d’entrée `mint` du contrat de token non fongible nft.arl pour ajouter un asset de token au ledger.
-Ce point d'entrée prend en argument le nécessaire pour créer le token; et ne sera qu'appelable par l'adresse `admin`
+Ce point d'entrée prend en argument le nécessaire pour créer le token et ne peut être appelé que l'adresse `admin`.
 
 ## Exercice 2
 
