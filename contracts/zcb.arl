@@ -1,4 +1,3 @@
-
 archetype zcb(
   holder        : address,
   issuer        : address,
