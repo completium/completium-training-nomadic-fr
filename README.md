@@ -133,8 +133,12 @@ Transformer le point d’entrée `subscribe` en transition de `Created` vers `Su
 Transformer le point d’entrée `redeem` en transition de `Subscribed` vers `Redeemed`.
 
 Ajouter une transition `default` appelée par `holder`, qui passe de `Subscribed` vers `Defaulted`.
+
+
 Définir une variable du Storage nommé `payback` de type `duration` initialisée à 5 jours.
 Puis gérer la condition suivante :
+
+
 N'accepter que la transition, si la date d’appel est au-delà de la date de maturité plus la durée de rachat `payback`.
 
 ## Exercice 2
@@ -195,13 +199,6 @@ remarque: 1er parametre l'addresse `admin`, 2eme l'id du token, 3eme l'addresse 
 * Changer de compte courant et selectionner `buyer`
 * Enchérir à `12tz` via l'entrée `bid` (vous pouvez également constater que si vous mettez une valeur strictement inferieur à 10tz l'appel échouera)
 * Déclencher `claim` au moment opportun et constater le changement de propriétaire du token.
-
-
-
-
-
-
-et appeler les deux contrats pour observer dans Better-Call-Dev les transactions d’échange inter-contrat
 
 # Verification formelle
 
