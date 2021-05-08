@@ -152,7 +152,7 @@ Déployer et appeler les deux contrats pour observer dans Better-Call-Dev les tr
 
 ## Exercice 1
 
-Lister et écrire en **langage naturel** les postconditions du point d’entrée transfer de nft.arl.
+Lister et écrire en **langage naturel** les postconditions du point d’entrée `%transfer` de nft.arl.
 
 ```
 entry %transfer (%from : address, %to : address, tid : nat) {
