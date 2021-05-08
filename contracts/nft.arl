@@ -24,7 +24,7 @@ entry %transfer (%from : address, %to : address, tid : nat) {
 }
 
 entry approve (spender : address, tid: nat) {
-  called by ledger[tid].owner
+  sourced by ledger[tid].owner
   failif {
     r1 with "UNSAFE ALLOWANCE" : allowance.contains((source, spender));
   }

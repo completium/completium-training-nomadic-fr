@@ -132,7 +132,10 @@ Transformer le point d’entrée `subscribe` en transition de `Created` vers `Su
 
 Transformer le point d’entrée `redeem` en transition de `Subscribed` vers `Redeemed`.
 
-Ajouter une transition `default` appelée par `holder`, qui passe de `Subscribed` vers `Defaulted` si la date d’appel est au-delà de la date de maturité plus la durée de rachat `payback` (à définir).
+Ajouter une transition `default` appelée par `holder`, qui passe de `Subscribed` vers `Defaulted`.
+Définir une variable du Storage nommé `payback` de type `duration` initialisée à 5 jours.
+Puis gérer la condition suivante :
+N'accepter que la transition, si la date d’appel est au-delà de la date de maturité plus la durée de rachat `payback`.
 
 ## Exercice 2
 
@@ -155,6 +158,9 @@ La transition `subscribe` ne peut donc être appelée que par le contrat lui-mê
 
 > Exercices : [vidéo](https://www.wevideo.com/view/2175199447)
 
+> Documentation sur les [transfers](https://docs.archetype-lang.org/archetype-language/transfers)
+
+
 Mettre en place le principe de modularité d’un processus de vente aux enchères d’un token NFT avec les contrats `nft.arl` et [auction.arl](./contracts/auction.arl)
 
 Le contrat `auction.arl` fournit le mécanisme de vente aux enchères d'un token:
@@ -164,7 +170,7 @@ Le contrat `auction.arl` fournit le mécanisme de vente aux enchères d'un token
 
 ## Exercice 1
 
-Ajouter un getter au contrat NFT qui renvoie le propriétaire du token dont l'identifiant est passé en argument.
+Ajouter un getter nommé `getOwner` au contrat NFT qui renvoie le propriétaire du token dont l'identifiant est passé en argument.
 
 Modifier le contrat d’enchère `auction.arl` de façon à ce qu’il interagisse avec le contrat NFT pour :
 * vérifier que le token échangé appartienne à celui qui démarre les enchères
@@ -173,7 +179,29 @@ Modifier le contrat d’enchère `auction.arl` de façon à ce qu’il interagis
 
 ## Exercice 2
 
-Déployer et appeler les deux contrats pour observer dans Better-Call-Dev les transactions d’échange inter-contrat
+Nous nommerons `admin` le compte courant
+
+Prérequis:
+* Créer un nouvel utilisateur nommé `buyer` avec un nouveau faucet.json
+
+Instructions:
+
+* Déployer le contrat `nft` avec le getter en l'initialisant avec votre adresse courante `admin` (`completium-cli show account`)
+* Créer le token ayant pour identifiant `24` et appartenant à l'adresse `admin` dans le contrat `nft` via l'entrée `mint`
+remarque: `completium-cli show entries nft` permet de voir les entrés avec leurs signature
+* Déployer le contract `auction` mettant aux enchères le token que vous venez de créer
+remarque: 1er parametre l'addresse `admin`, 2eme l'id du token, 3eme l'addresse du contract (`completium-cli show contract nft`)
+* Appeler l'entrée `upforsale` avec un montant de `10tz`
+* Changer de compte courant et selectionner `buyer`
+* Enchérir à `12tz` via l'entrée `bid` (vous pouvez également constater que si vous mettez une valeur strictement inferieur à 10tz l'appel échouera)
+* Déclencher `claim` au moment opportun et constater le changement de propriétaire du token.
+
+
+
+
+
+
+et appeler les deux contrats pour observer dans Better-Call-Dev les transactions d’échange inter-contrat
 
 # Verification formelle
 
