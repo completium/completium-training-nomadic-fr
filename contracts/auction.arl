@@ -49,7 +49,7 @@ transition claim () {
   with effect {
     match bestbidder with
     | some best -> begin
-      transfer balance to best;
+      transfer balance to owner;
       (* FIXME: transfer ownership *)
       end
     | none -> ()

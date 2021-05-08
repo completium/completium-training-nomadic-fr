@@ -177,9 +177,16 @@ Le contrat `auction.arl` fournit le mécanisme de vente aux enchères d'un token
 Ajouter un getter nommé `getOwner` au contrat NFT qui renvoie le propriétaire du token dont l'identifiant est passé en argument.
 
 Modifier le contrat d’enchère `auction.arl` de façon à ce qu’il interagisse avec le contrat NFT pour :
-* vérifier que le token échangé appartienne à celui qui démarre les enchères
-* autoriser le contrat d’enchère à effectuer le transfert
-* transférer le token au gagnant de l’enchère
+* Vérifier que le token échangé appartienne à celui qui démarre les enchères. Pour cela:
+  * Créer un point d'entré nommé `checkowner` prennant en argument une adresse.
+  * Ce point d'entré devra échouer si l'appelant n'est pas l'addresse du contrat `nft` ET si l'adresse en argument n'est pas l'adresse du déclencheur initiale de l'operation (constante `source` en archetype)
+  * Ajouter un appel au getter `getOwner` du contrat `nft` avec comme callback le point d'entrée `checkowner`
+* Autoriser le contrat d’enchère à effectuer le transfert.
+  * Ajouter un appel au point d'entré `approve` au contrat `nft` après celui de `getOwner`
+  * Les arguments sont l'adresse de ce contrat (`selfaddress`) et l'identifiant du token (`tokenid`)
+* Transférer le token au gagnant de l’enchère
+  * Ajouter un appel au point d'entré `transfer` au contrat `nft` dans l'entrée `claim`, après le transfert de fonds à l'ex-propriétaire.
+  * Les arguments sont l'adresse de l'ex-propriétaire, l'adresse du gagnant de l'enchère et l'identifiant du token (`tokenid`)
 
 ## Exercice 2
 
@@ -192,13 +199,26 @@ Instructions:
 
 * Déployer le contrat `nft` avec le getter en l'initialisant avec votre adresse courante `admin` (`completium-cli show account`)
 * Créer le token ayant pour identifiant `24` et appartenant à l'adresse `admin` dans le contrat `nft` via l'entrée `mint`
-remarque: `completium-cli show entries nft` permet de voir les entrés avec leurs signature
 * Déployer le contract `auction` mettant aux enchères le token que vous venez de créer
-remarque: 1er parametre l'addresse `admin`, 2eme l'id du token, 3eme l'addresse du contract (`completium-cli show contract nft`)
 * Appeler l'entrée `upforsale` avec un montant de `10tz`
 * Changer de compte courant et selectionner `buyer`
 * Enchérir à `12tz` via l'entrée `bid` (vous pouvez également constater que si vous mettez une valeur strictement inferieur à 10tz l'appel échouera)
 * Déclencher `claim` au moment opportun et constater le changement de propriétaire du token.
+
+```bash
+#completium-cli import faucet faucet_buyer.json as buyer
+admin=`completium-cli show <YOUR_ALIAS>`
+completium-cli deploy nft.arl --init $admin
+# completium-cli show entries nft
+completium-cli call nft --entry mint --with "(24, $admin)"
+nft=`completium-cli show contract nft`
+completium-cli deploy auction.arl --init "($admin, 24, $nft)"
+completium-cli call auction --entry upforsale --with 10tz
+completium-cli set account buyer
+completium-cli call auction --entry bid --amount 12tz
+# Wait 2 minutes
+completium-cli call claim
+```
 
 # Verification formelle
 
