@@ -28,3 +28,7 @@ vscode:
   extensions:
     - edukera.archetype@0.38.0:34b46074dc387b4474aec36d202ee28b
     - baking-bad.michelson@0.1.0:0e45f95fc6b866c2888fe25844470b8c
+tasks:
+  - openMode: tab-after
+    command: |-
+      clear
