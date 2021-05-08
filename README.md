@@ -1,4 +1,4 @@
-# Exercices Archetype
+# Formation Archetype
 
 Bonjour, bienvenue dans la session de formation au langage [Archetype](https://archetype-lang.org/) :
 
