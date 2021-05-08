@@ -1,6 +1,13 @@
 # Exercices Archetype
 
-Bonjour, bienvenue dans la session d'exercices du langage [Archetype](https://archetype-lang.org/).
+Bonjour, bienvenue dans la session d'exercices du langage [Archetype](https://archetype-lang.org/) :
+
+* [Base de la syntaxe](#bases-de-la-syntaxe)
+* [Collection d'assets](#collection-dassets)
+* [Machine à état](#machine-à-état)
+* [Evolution de contrat](#evolution-de-contrat)
+* [Vérification formelle](#vérification-formelle)
+* [Application décentralisée](#application-décentralisée)
 
 # Bases de la syntaxe
 
@@ -119,6 +126,53 @@ La transition `subscribe` ne peut donc être appelée que par le contrat lui-mê
 
 > L’adresse du contrat est `selfaddress`.
 
+# Evolution de contrat
 
+Mettre en place le principe de modularité d’un processus de vente aux enchères d’un token NFT avec les contrats `nft.arl` et [auction.arl](./contracts/auction.arl)
 
+Le contrat `auction.arl` fournit le mécanisme de vente aux enchères d'un token:
+* `upforsale` est appelé par le propriétaire du token pour le mettre aux enchères
+* `bid` permet est appelé pour faire une offre
+* `claim` est appelé pour transférer la propriété du token au gagnant de l’enchère
 
+## Exercice 1
+
+Ajouter un getter au contrat NFT qui renvoie le propriétaire du token dont l'identifiant est passé en argument.
+
+Modifier le contrat d’enchère `auction.arl` de façon à ce qu’il interagisse avec le contrat NFT pour :
+* vérifier que le token échangé appartienne à celui qui démarre les enchères
+* autoriser le contrat d’enchère à effectuer le transfert
+* transférer le token au gagnant de l’enchère
+
+## Exercice 2
+
+Déployer et appeler les deux contrats pour observer dans Better-Call-Dev les transactions d’échange inter-contrat
+
+# Verification formelle
+
+## Exercice 1
+
+Lister et écrire en **langage naturel** les postconditions du point d’entrée transfer de nft.arl.
+
+```
+entry %transfer (%from : address, %to : address, tid : nat) {
+  require {
+    r0: ledger[tid].owner = %from
+  }
+  effect {
+    if caller <> %from then begin
+      dorequire (allowance.contains((%from, caller)), "CALLER NOT ALLOWED");
+      allowance.remove(((%from, caller)))
+    end;
+    ledger[tid].owner := %to;
+  }
+}
+```
+
+## Exercice 2
+
+Transcrire les postconditions en langage de spécification formelle Archetype.
+
+# Application décentralisée
+
+Effectuer le didacticiel [First Dapp](https://completium.com/docs/dapp-first) du site Completium.
