@@ -55,7 +55,7 @@ L’URL du contrat apparaît dans la trace de la commande de déploiement. Cliqu
 
 Appeler le contrat pour changer la chaîne de caractères du contrat :
 
-```completium-cli call hello --with "Hello Archetype World"```
+```completium-cli call hello --with '"Hello Archetype World"'```
 
 > le contrat n’ayant qu’un point d’entrée, il n’est pas nécessaire de spécifier le nom du point d’entrée. L’option --entry est utilisée pour spécifier le nom du point d’entrée.
 
@@ -68,11 +68,11 @@ La différence entre le prix d'émission (original value) et le prix de rachat (
 ```face value = face rate * original value```
 
 Le contrat [zcb.arl](./contracts/zcb.arl) implante une obligation à zéro coupon:
-le point d’entrée subscribe permet au souscripteur déclaré de transférer les fonds à l’émetteur
-le point d’entrée redeem permet à l'émetteur de racheter l’obligation
+le point d’entrée `subscribe` permet au souscripteur déclaré de transférer les fonds à l’émetteur
+le point d’entrée `redeem` permet à l'émetteur de racheter l’obligation
 
 Parmis les éléments suivants d’une obligation à coupon zéro, 2 ne sont pas implantés par zcb.arl; les trouver et les corriger :
-* la date de maturité est calculée comme la date de souscription plus 356 jours
+* la date de maturité est calculée comme la date de souscription plus 365 jours
 * le rachat de l’obligation ne peut se faire qu’après la date de maturité
 * la valeur de rachat (face value) est le prix d’émission multiplié par le coefficient
 * le solde du contrat est toujours 0 XTZ
@@ -95,7 +95,7 @@ Le point d’entrée transfer effectue le transfert de propriété du token en l
 
 ## Exercice 1
 
-Écrire le point d’entrée mint du contrat de token non fongible nft.arl pour ajouter un asset de token au ledger
+Écrire le point d’entrée `mint` du contrat de token non fongible nft.arl pour ajouter un asset de token au ledger
 
 ## Exercice 2
 
