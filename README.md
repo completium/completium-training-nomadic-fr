@@ -12,7 +12,7 @@ Bonjour, bienvenue dans la session de formation au langage [Archetype](https://a
 
 # Introduction
 
-> Présentation : [vidéo](https://www.wevideo.com/view/2170250541)
+> Présentation : [vidéo](https://www.wevideo.com/view/2175222600)
 
 # Bases de la syntaxe
 
