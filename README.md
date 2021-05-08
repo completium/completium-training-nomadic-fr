@@ -1,0 +1,1 @@
+# completium-training-nomadic-fr
