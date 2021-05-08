@@ -2,9 +2,9 @@
 
 Bonjour, bienvenue dans la session d'exercices du langage [Archetype](https://archetype-lang.org/).
 
-## Bases de la syntaxe
+# Bases de la syntaxe
 
-### Exercice 1
+## Exercice 1
 
 Écrire, déployer et appeler un premier Smart Contract en Archetype qui permette d’enregistrer une chaîne de caractères et de la modifier avec un point d’entrée qui prend la nouvelle valeur en argument.
 
@@ -42,7 +42,7 @@ Appeler le contrat pour changer la chaîne de caractères du contrat :
 
 > le contrat n’ayant qu’un point d’entrée, il n’est pas nécessaire de spécifier le nom du point d’entrée. L’option --entry est utilisée pour spécifier le nom du point d’entrée.
 
-### Exercice 2
+## Exercice 2
 
 Une obligation à coupon zéro (zero coupon bond) est la plus simple des obligations entre un émetteur (issuer) et un souscripteur (holder).
 
@@ -60,6 +60,33 @@ Parmis les éléments suivants d’une obligation à coupon zéro, 2 ne sont pas
 * la valeur de rachat (face value) est le prix d’émission multiplié par le coefficient
 * le solde du contrat est toujours 0 XTZ
 
+# Collection d'asset
+
+Un token non fongible (non fungible token, NFT) est un token unique que l’on peut transférer d’un propriétaire à un autre.
+
+Le contrat nft.arl implante un NFT en s’inspirant de la norme du FA 2 de Tezos pour les tokens non fongibles.
+
+Cette norme prévoit que l’on puisse déléguer la capacité de transfert à un tiers. Les informations de délégation (allowance) sont stockées dans une collection d’asset. Le point d’entrée permettant d’autoriser un tiers à transférer son token est allow.
+
+Le tiers délégataire est typiquement un autre contrat qui met en œuvre un processus de vente, comme des enchères par exemple.
+
+Le point d’entrée transfer effectue le transfert de propriété du token en lisant la table des autorisations dans le cas où l'appelant n’est pas le propriétaire du token.
+
+## Exercice 1
+
+Écrire le point d’entrée mint du contrat de token non fongible nft.arl pour ajouter un asset de token au ledger
+
+## Exercice 2
+
+Ajouter des données au token :
+* `uri` (adresse IPFS de l’asset digital)
+* `creator` (adresse du compte tezos du créateur du NFT)
+* `royalties` (pourcentage reversé au créateur à chaque vente)
+* `nbtransfers` (nombre de transferts du NFT)
+
+Écrire les points d’entrée :
+* `increase` qui augmente de 10% le pourcentage reversé au créateur des tokens ayant été échangés plus de 10 fois
+* `rm` qui supprime du ledger les tokens ayant été échangés plus de 20 fois
 
 
 
