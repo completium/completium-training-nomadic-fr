@@ -1,7 +1,8 @@
 # Exercices Archetype
 
-Bonjour, bienvenue dans la session d'exercices du langage [Archetype](https://archetype-lang.org/) :
+Bonjour, bienvenue dans la session de formation au langage [Archetype](https://archetype-lang.org/) :
 
+* [Introduction](#introduction)
 * [Base de la syntaxe](#bases-de-la-syntaxe)
 * [Collection d'assets](#collection-dassets)
 * [Machine à état](#machine-à-état)
@@ -9,7 +10,16 @@ Bonjour, bienvenue dans la session d'exercices du langage [Archetype](https://ar
 * [Vérification formelle](#vérification-formelle)
 * [Application décentralisée](#application-décentralisée)
 
+# Introduction
+
+> Présentation : [vidéo](https://www.wevideo.com/view/2170250541)
+
 # Bases de la syntaxe
+
+
+> Présentation : [vidéo](https://www.wevideo.com/view/2171277853)
+
+> Exercices : [vidéo](https://www.wevideo.com/view/2175169498)
 
 ## Exercice 1
 
@@ -69,6 +79,10 @@ Parmis les éléments suivants d’une obligation à coupon zéro, 2 ne sont pas
 
 # Collection d'assets
 
+> Présentation : [vidéo](https://www.wevideo.com/view/2171750981)
+
+> Exercices : [vidéo](https://www.wevideo.com/view/2175183804)
+
 Un token non fongible (non fungible token, NFT) est un token unique que l’on peut transférer d’un propriétaire à un autre.
 
 Le contrat [nft.arl](./contracts/nft.arl) implante un NFT en s’inspirant de la norme du FA 2 de Tezos pour les tokens non fongibles.
@@ -96,6 +110,10 @@ Ajouter des données au token :
 * `rm` qui supprime du ledger les tokens ayant été échangés plus de 20 fois
 
 # Machine à état
+
+> Présentation : [vidéo](https://www.wevideo.com/view/2172439662)
+
+> Exercices : [vidéo](https://www.wevideo.com/view/2175193610)
 
 ## Exercice 1
 
@@ -128,6 +146,10 @@ La transition `subscribe` ne peut donc être appelée que par le contrat lui-mê
 
 # Evolution de contrat
 
+> Présentation : [vidéo](https://www.wevideo.com/view/2173357339)
+
+> Exercices : [vidéo](https://www.wevideo.com/view/2175199447)
+
 Mettre en place le principe de modularité d’un processus de vente aux enchères d’un token NFT avec les contrats `nft.arl` et [auction.arl](./contracts/auction.arl)
 
 Le contrat `auction.arl` fournit le mécanisme de vente aux enchères d'un token:
@@ -149,6 +171,8 @@ Modifier le contrat d’enchère `auction.arl` de façon à ce qu’il interagis
 Déployer et appeler les deux contrats pour observer dans Better-Call-Dev les transactions d’échange inter-contrat
 
 # Verification formelle
+
+> Présentation : [vidéo](https://www.wevideo.com/view/2173723009)
 
 ## Exercice 1
 
@@ -174,5 +198,7 @@ entry %transfer (%from : address, %to : address, tid : nat) {
 Transcrire les postconditions en langage de spécification formelle Archetype.
 
 # Application décentralisée
+
+> Présentation : [vidéo](https://www.wevideo.com/view/2174385435)
 
 Effectuer le didacticiel [First Dapp](https://completium.com/docs/dapp-first) du site Completium.
