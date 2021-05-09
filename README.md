@@ -183,20 +183,20 @@ Modifier le contrat d’enchère `auction.arl` de façon à ce qu’il interagis
 
 ## Exercice 2
 
-Nous nommerons `admin` le compte courant
+Dans ce qui suit, `admin` désigne le compte courant.
 
 Prérequis:
 * Créer un nouvel utilisateur nommé `buyer` avec un nouveau faucet.json
 
 Instructions:
 
-* Déployer le contrat `nft` avec le getter en l'initialisant avec votre adresse courante `admin` (`completium-cli show account`)
-* Créer le token ayant pour identifiant `24` et appartenant à l'adresse `admin` dans le contrat `nft` via l'entrée `mint`
-* Déployer le contract `auction` mettant aux enchères le token que vous venez de créer
-* Appeler l'entrée `upforsale` avec un montant de `10tz`
-* Changer de compte courant et selectionner `buyer`
-* Enchérir à `12tz` via l'entrée `bid` (vous pouvez également constater que si vous mettez une valeur strictement inferieur à 10tz l'appel échouera)
-* Déclencher `claim` au moment opportun et constater le changement de propriétaire du token.
+* Déployer le contrat `nft` avec le getter en l'initialisant avec l'adresse courante `admin` (`completium-cli show account`).
+* Créer le token ayant pour identifiant `24` et appartenant à l'adresse `admin` dans le contrat `nft` en appelant l'entrée `mint`.
+* Déployer le contract `auction` mettant aux enchères le token `24`.
+* Appeler l'entrée `upforsale` avec un prix de vente de `10tz`.
+* Changer de compte courant et selectionner `buyer`.
+* Enchérir à `12tz` en appelant l'entrée `bid` (constater qu'une valeur strictement inferieur à 10tz fait échouer l'appel)
+* Appeler `claim` une fois l'enchère finie et constater le changement effectif de propriétaire du token.
 
 ```bash
 #completium-cli import faucet faucet_buyer.json as buyer
