@@ -198,7 +198,7 @@ Instructions:
 * Enchérir à `12tz` en appelant l'entrée `bid` (constater qu'une valeur strictement inferieur à 10tz fait échouer l'appel)
 * Appeler `claim` une fois l'enchère finie et constater le changement effectif de propriétaire du token.
 
-```bash
+```sh
 #completium-cli import faucet faucet_buyer.json as buyer
 admin=`completium-cli show <YOUR_ALIAS>`
 completium-cli deploy nft.arl --init $admin
