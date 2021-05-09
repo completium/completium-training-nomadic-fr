@@ -17,7 +17,7 @@ transition upforsale (price : tez) {
   from Transferred to ForSale
   with effect {
     bestbid := price;
-    endofbid := now + 5m;
+    endofbid := now + 3m;
     (* FIXME: fail if caller is not the owner of tokenid *)
   }
 }
