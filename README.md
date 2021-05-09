@@ -63,7 +63,7 @@ Appeler le contrat pour changer la chaîne de caractères du contrat :
 
 Une obligation zéro-coupon (zero coupon bond) est la plus simple des obligations entre un émetteur (issuer) et un souscripteur (holder).
 
-La différence entre le prix d'émission (original value) et le prix de rachat (face value) est régie par un coefficient (face rate) tel que:
+La différence entre le prix d'émission (*original value*) et le prix de rachat (*face value*) est régie par un coefficient (*face rate*) tel que:
 
 ```face value = face rate * original value```
 
