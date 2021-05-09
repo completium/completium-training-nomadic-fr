@@ -61,17 +61,17 @@ Appeler le contrat pour changer la chaîne de caractères du contrat :
 
 ## Exercice 2
 
-Une obligation à coupon zéro (zero coupon bond) est la plus simple des obligations entre un émetteur (issuer) et un souscripteur (holder).
+Une obligation zéro-coupon (zero coupon bond) est la plus simple des obligations entre un émetteur (issuer) et un souscripteur (holder).
 
 La différence entre le prix d'émission (original value) et le prix de rachat (face value) est régie par un coefficient (face rate) tel que:
 
 ```face value = face rate * original value```
 
-Le contrat [zcb.arl](./contracts/zcb.arl) implante une obligation à zéro coupon:
+Le contrat [zcb.arl](./contracts/zcb.arl) implante une obligation à zéro-coupon :
 le point d’entrée `subscribe` permet au souscripteur déclaré de transférer les fonds à l’émetteur
 le point d’entrée `redeem` permet à l'émetteur de racheter l’obligation
 
-Parmis les 4 propriétés suivantes de l'obligation à coupon zéro, 2 ne sont pas vérifiées par zcb.arl; les trouver et les corriger :
+Parmis les 4 propriétés suivantes de l'obligation zéro-coupon, 2 ne sont pas vérifiées par zcb.arl; les trouver et les corriger :
 1. la date de maturité (`redemption`) est calculée comme la date de souscription plus 365 jours
 2. le rachat de l’obligation ne peut se faire qu’après la date de maturité
 3. la valeur de rachat (`facevalue`) est le prix d’émission (`originalvalue`) multiplié par le coefficient (`facerate`)
