@@ -135,8 +135,7 @@ Transformer le point d’entrée `redeem` en transition de `Subscribed` vers `Re
 Ajouter une transition `default` appelée par `holder`, qui passe de `Subscribed` vers `Defaulted` si le rachat de l'obligation ne s'est pas passé dans les 5 jours suivant la date de maturité :
 
  * Définir une variable du Storage nommé `payback` de type `duration` initialisée à 5 jours.
- * Ajouter à la transition `default` la condition (d'exécution) que, une fois l'obligation arrivée à maturité, l'émetteur n'a que 5 jour pour la racheter.
- * Implanter cette condition à l'aide d'une fenêtre temporelle (ie. double inégalité de la forme `... <= now <= ...`).
+ * Ajouter à la transition `default` la condition (d'exécution) que la date d'appel est au délà de 5 jours après la date de maturité.
 
 ## Exercice 2
 
