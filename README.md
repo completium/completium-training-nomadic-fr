@@ -185,8 +185,8 @@ Modifier le contrat d’enchère `auction.arl` de façon à ce qu’il interagis
   * Dans le point d'entrée `updforsale`, ajouter un appel au point d'entré `approve` du contrat `nft`.
   * Les arguments de `approve` sont l'adresse de ce contrat (`selfaddress`) et l'identifiant du token (`tokenid`) pour approver ce contrat à transférer ce token.
 * Transférer le token au gagnant de l’enchère :
-  * Dans le point d'entrée `claim`, ajouter un appel au point d'entré `transfer` au contrat `nft` dans l'entrée `claim`, après le transfert de fonds à l'ex-propriétaire.
-  * Les arguments sont l'adresse de l'ex-propriétaire,l'adresse du gagnant de l'enchère et l'identifiant du token (`tokenid`).
+  * Dans le point d'entrée `claim`, ajouter un appel au point d'entré `%transfer` au contrat `nft` dans l'entrée `claim`, après le transfert de fonds à l'ex-propriétaire.
+  * Les arguments de `%transfer` sont l'adresse de l'ex-propriétaire,l'adresse du gagnant de l'enchère et l'identifiant du token (`tokenid`).
 
 ## Exercice 2
 
