@@ -72,9 +72,9 @@ le point d’entrée `subscribe` permet au souscripteur déclaré de transférer
 le point d’entrée `redeem` permet à l'émetteur de racheter l’obligation
 
 Parmis les éléments suivants d’une obligation à coupon zéro, 2 ne sont pas implantés par zcb.arl; les trouver et les corriger :
-* la date de maturité (*redemption*) est calculée comme la date de souscription plus 365 jours
+* la date de maturité (`redemption`) est calculée comme la date de souscription plus 365 jours
 * le rachat de l’obligation ne peut se faire qu’après la date de maturité
-* la valeur de rachat (*facevalue*) est le prix d’émission multiplié par le coefficient
+* la valeur de rachat (`facevalue`) est le prix d’émission multiplié par le coefficient (`facerate`)
 * le solde du contrat est toujours 0 XTZ
 
 # Collection d'assets
