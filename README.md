@@ -162,7 +162,7 @@ Mettre en place le principe de modularité d’un processus de vente aux enchèr
 
 Le contrat `auction.arl` fournit le mécanisme de vente aux enchères d'un token:
 * `upforsale` est appelé par le propriétaire du token pour le mettre aux enchères
-* `bid` permet est appelé pour faire une offre
+* `bid` est appelé pour faire une offre
 * `claim` est appelé pour transférer la propriété du token au gagnant de l’enchère
 
 ## Exercice 1
