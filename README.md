@@ -141,9 +141,9 @@ Ajouter une transition `default` appelée par `holder`, qui passe de `Subscribed
 
 Etablir le point d’entrée `sign` qui doit être appelé par le souscripteur ET l'émetteur pour que le contrat passe de l’état `Created` à `Subscribed`.
 
-Ce point d’entrée mémorise dans deux variables booléennes du Storage si le souscripteur et l’émetteur l’ont appelé de sorte que :
-* Lorsque les deux adresses l'ont appelé, `sign` appelle alors la transition `subscribe`.
-* La transition `subscribe` ne peut donc être appelée que par le contrat lui-même.
+Ce point d’entrée mémorise dans deux variables booléennes du Storage si le souscripteur et l’émetteur l’ont appelé de sorte que, lorsque les deux adresses l'ont appelé, `sign` appelle alors la transition `subscribe`.
+
+La transition `subscribe` ne peut être appelée que par le contrat lui-même.
 
 > Un contrat peut s’appeler lui-même avec l’instruction transfer:
 > `transfer 0tz to entry self.subscribe();`
