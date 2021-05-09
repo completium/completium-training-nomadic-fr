@@ -136,9 +136,7 @@ Ajouter une transition `default` appelée par `holder`, qui passe de `Subscribed
 
 Définir une variable du Storage nommé `payback` de type `duration` initialisée à 5 jours.
 
-Ajouter à la transition `default` la condition d'exécution : une fois l'obligation arrivée à maturité, l'émetteur n'a que 5 jour pour la racheter.
-
-On implante cette condition à l'aide d'une fenêtre temporelle.
+Ajouter à la transition `default` la condition d'exécution : une fois l'obligation arrivée à maturité, l'émetteur n'a que 5 jour pour la racheter. Implanter cette condition à l'aide d'une fenêtre temporelle (ie. double inégalité de la forme `... <= now <= ...`).
 
 ## Exercice 2
 
