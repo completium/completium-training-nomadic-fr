@@ -1,4 +1,4 @@
-archetype simpleNFT(admin : address)
+archetype nft(admin : address)
 
 asset ledger {
   id    : nat;
