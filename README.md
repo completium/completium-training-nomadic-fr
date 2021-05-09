@@ -134,12 +134,11 @@ Transformer le point d’entrée `redeem` en transition de `Subscribed` vers `Re
 
 Ajouter une transition `default` appelée par `holder`, qui passe de `Subscribed` vers `Defaulted`.
 
-
 Définir une variable du Storage nommé `payback` de type `duration` initialisée à 5 jours.
-Puis gérer la condition suivante :
 
+Ajouter à la transition `default` la condition d'exécution : une fois l'obligation arrivée à maturité, l'émetteur n'a que 5 jour pour la racheter.
 
-N'accepter que la transition, si la date d’appel est au-delà de la date de maturité plus la durée de rachat `payback`.
+On implante cette condition à l'aide d'une fenêtre temporelle.
 
 ## Exercice 2
 
