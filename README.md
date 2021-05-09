@@ -162,8 +162,7 @@ La transition `subscribe` ne peut donc être appelée que par le contrat lui-mê
 
 > Exercices : [vidéo](https://www.wevideo.com/view/2175199447)
 
-> Documentation sur les [transfers](https://docs.archetype-lang.org/archetype-language/transfers)
-
+> Documentation sur les [appels inter-contrats](https://docs.archetype-lang.org/archetype-language/transfers)
 
 Mettre en place le principe de modularité d’un processus de vente aux enchères d’un token NFT avec les contrats `nft.arl` et [auction.arl](./contracts/auction.arl)
 
