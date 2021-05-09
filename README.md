@@ -12,14 +12,14 @@ Bonjour, bienvenue dans la session de formation au langage [Archetype](https://a
 
 # Introduction
 
-> Présentation : [vidéo](https://www.wevideo.com/view/2175222600)
+> Présentation : [vidéo](https://www.youtube.com/watch?v=Zj1m-BouSkc)
 
 # Bases de la syntaxe
 
 
-> Présentation : [vidéo](https://www.wevideo.com/view/2171277853)
+> Présentation : [vidéo](https://www.youtube.com/watch?v=vcsMwDImTH8)
 
-> Exercices : [vidéo](https://www.wevideo.com/view/2175169498)
+> Exercices : [vidéo](https://www.youtube.com/watch?v=OAQz2xMTq28)
 
 ## Exercice 1
 
@@ -79,9 +79,9 @@ Parmis les 4 propriétés suivantes de l'obligation zéro-coupon, 2 ne sont pas 
 
 # Collection d'assets
 
-> Présentation : [vidéo](https://www.wevideo.com/view/2171750981)
+> Présentation : [vidéo](https://www.youtube.com/watch?v=tI2b55fFajg)
 
-> Exercices : [vidéo](https://www.wevideo.com/view/2175183804)
+> Exercices : [vidéo](https://www.youtube.com/watch?v=zOVulHJzysA)
 
 > Documentation sur les [assets](https://docs.archetype-lang.org/archetype-language/data-model)
 
@@ -114,9 +114,9 @@ Ajouter des données au token :
 
 # Machine à état
 
-> Présentation : [vidéo](https://www.wevideo.com/view/2172439662)
+> Présentation : [vidéo](https://www.youtube.com/watch?v=Rp67NCopj0s)
 
-> Exercices : [vidéo](https://www.wevideo.com/view/2175193610)
+> Exercices : [vidéo](https://www.youtube.com/watch?v=aTKxdkTUVU0)
 
 > Documentation sur les [machines à état](https://docs.archetype-lang.org/archetype-language/state-machine)
 
@@ -152,9 +152,9 @@ La transition `subscribe` ne peut être appelée que par le contrat lui-même.
 
 # Evolution de contrat
 
-> Présentation : [vidéo](https://www.wevideo.com/view/2173357339)
+> Présentation : [vidéo](https://www.youtube.com/watch?v=qhH-iFRNs_A)
 
-> Exercices : [vidéo](https://www.wevideo.com/view/2175199447)
+> Exercices : [vidéo](https://www.youtube.com/watch?v=lvDZh9vbUhA)
 
 > Documentation sur les [appels inter-contrats](https://docs.archetype-lang.org/archetype-language/transfers)
 
@@ -220,7 +220,7 @@ completium-cli call auction --entry claim --force
 
 # Vérification formelle
 
-> Présentation : [vidéo](https://www.wevideo.com/view/2173723009)
+> Présentation : [vidéo](https://www.youtube.com/watch?v=59JJk-7gJxM)
 
 ## Exercice 1
 
@@ -247,6 +247,6 @@ Transcrire les postconditions en langage de spécification formelle Archetype.
 
 # Application décentralisée
 
-> Présentation : [vidéo](https://www.wevideo.com/view/2174385435)
+> Présentation : [vidéo](https://www.youtube.com/watch?v=fyuB6CKmg4w)
 
 Effectuer le didacticiel [First Dapp](https://completium.com/docs/dapp-first) du site Completium.
