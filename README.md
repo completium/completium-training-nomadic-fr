@@ -202,15 +202,15 @@ Instructions:
 #completium-cli import faucet faucet_buyer.json as buyer
 admin=`completium-cli show <YOUR_ALIAS>`
 completium-cli deploy nft.arl --init $admin
-# completium-cli show entries nft
 completium-cli call nft --entry mint --with "(24, $admin)"
 nft=`completium-cli show contract nft`
 completium-cli deploy auction.arl --init "($admin, 24, $nft)"
 completium-cli call auction --entry upforsale --with 10tz
 completium-cli set account buyer
 completium-cli call auction --entry bid --amount 12tz
-# Wait 2 minutes
-completium-cli call claim
+# wait 2+ minutes
+sleep 150s
+completium-cli call auction --entry claim
 ```
 
 # Vérification formelle
