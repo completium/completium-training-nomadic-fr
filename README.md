@@ -71,11 +71,11 @@ Le contrat [zcb.arl](./contracts/zcb.arl) implante une obligation à zéro coupo
 le point d’entrée `subscribe` permet au souscripteur déclaré de transférer les fonds à l’émetteur
 le point d’entrée `redeem` permet à l'émetteur de racheter l’obligation
 
-Parmis les éléments suivants d’une obligation à coupon zéro, 2 ne sont pas implantés par zcb.arl; les trouver et les corriger :
-* la date de maturité (`redemption`) est calculée comme la date de souscription plus 365 jours
-* le rachat de l’obligation ne peut se faire qu’après la date de maturité
-* la valeur de rachat (`facevalue`) est le prix d’émission (`originalvalue`) multiplié par le coefficient (`facerate`)
-* le solde du contrat est toujours 0 XTZ
+Parmis les 4 propriétés suivantes de l'obligation à coupon zéro, 2 ne sont pas vérifiées par zcb.arl; les trouver et les corriger :
+1. la date de maturité (`redemption`) est calculée comme la date de souscription plus 365 jours
+2. le rachat de l’obligation ne peut se faire qu’après la date de maturité
+3. la valeur de rachat (`facevalue`) est le prix d’émission (`originalvalue`) multiplié par le coefficient (`facerate`)
+4. le solde du contrat est toujours 0 XTZ
 
 # Collection d'assets
 
