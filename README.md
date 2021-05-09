@@ -177,16 +177,16 @@ Le contrat `auction.arl` fournit le mécanisme de vente aux enchères d'un token
 Ajouter un getter nommé `getOwner` au contrat NFT qui renvoie le propriétaire du token dont l'identifiant est passé en argument.
 
 Modifier le contrat d’enchère `auction.arl` de façon à ce qu’il interagisse avec le contrat NFT pour :
-* Vérifier que le token échangé appartienne à celui qui démarre les enchères. Pour cela:
-  * Créer un point d'entré nommé `checkowner` prennant en argument une adresse.
-  * Ce point d'entré devra échouer si l'appelant n'est pas l'addresse du contrat `nft` ET si l'adresse en argument n'est pas l'adresse du déclencheur initiale de l'operation (constante `source` en archetype)
-  * Ajouter un appel au getter `getOwner` du contrat `nft` avec comme callback le point d'entrée `checkowner`
-* Autoriser le contrat d’enchère à effectuer le transfert.
-  * Ajouter un appel au point d'entré `approve` au contrat `nft` après celui de `getOwner`
-  * Les arguments sont l'adresse de ce contrat (`selfaddress`) et l'identifiant du token (`tokenid`)
+* Vérifier que le token échangé appartienne à celui qui démarre les enchères :
+  * Créer un point d'entré nommé `checkowner` qui prend en argument une adresse.
+  * Ce point d'entré doit échouer si l'appelant n'est pas l'addresse du contrat `nft` ET si l'adresse en argument n'est pas l'adresse du déclencheur initiale de l'operation (constante `source` en archetype).
+  * Dans le point d'entrée `upforsale`, ajouter un appel au getter `getOwner` du contrat `nft` avec comme callback le point d'entrée `checkowner`.
+* Autoriser le contrat d’enchère à effectuer le transfert :
+  * Dans le point d'entrée `updforsale`, ajouter un appel au point d'entré `approve` du contrat `nft`.
+  * Les arguments de `approve` sont l'adresse de ce contrat (`selfaddress`) et l'identifiant du token (`tokenid`) pour approver ce contrat à transférer ce token.
 * Transférer le token au gagnant de l’enchère
-  * Ajouter un appel au point d'entré `transfer` au contrat `nft` dans l'entrée `claim`, après le transfert de fonds à l'ex-propriétaire.
-  * Les arguments sont l'adresse de l'ex-propriétaire, l'adresse du gagnant de l'enchère et l'identifiant du token (`tokenid`)
+  * Dans le point d'entrée `claim`, ajouter un appel au point d'entré `transfer` au contrat `nft` dans l'entrée `claim`, après le transfert de fonds à l'ex-propriétaire.
+  * Les arguments sont l'adresse de l'ex-propriétaire,l'adresse du gagnant de l'enchère et l'identifiant du token (`tokenid`).
 
 ## Exercice 2
 
