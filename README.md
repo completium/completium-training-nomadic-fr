@@ -220,7 +220,7 @@ completium-cli call auction --entry bid --amount 12tz
 completium-cli call claim
 ```
 
-# Verification formelle
+# Vérification formelle
 
 > Présentation : [vidéo](https://www.wevideo.com/view/2173723009)
 
