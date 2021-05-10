@@ -241,7 +241,7 @@ entry %transfer (%from : address, %to : address, tid : nat) {
 }
 ```
 
-## Exercice 2
+## Exercice 2 (optionnel)
 
 Transcrire les postconditions en langage de spécification formelle Archetype.
 
