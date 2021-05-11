@@ -190,7 +190,7 @@ Dans ce qui suit, `admin` désigne le compte courant.
 Prérequis:
 * Créer un nouvel utilisateur nommé `buyer` avec un nouveau faucet.json
 
-Editer le fichier [exec_auction.sh](./contratcs/exec_auction.sh) et remplacer `<YOUR_ALIAS>` avec l'alias de votre compte établi dans l'[exercice 1](#exercice-1) de la partie *Bases de la syntaxe* :
+Editer le fichier [exec_auction.sh](./contracts/exec_auction.sh) et remplacer `<YOUR_ALIAS>` avec l'alias de votre compte établi dans l'[exercice 1](#exercice-1) de la partie *Bases de la syntaxe* :
 
 ```sh
 #completium-cli import faucet faucet_buyer.json as buyer
