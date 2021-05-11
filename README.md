@@ -183,20 +183,19 @@ Modifier le contrat d’enchère `auction.arl` de façon à ce qu’il interagis
 
 ## Exercice 2
 
+L'objectif est de :
+* déployer les contrats `auction.arl` et `nft.arl`
+* créer un token 
+* le mettre aux enchères 
+* placer une enchère avec un compte dédié
+* enfin transférer la propriété au gagnant de l'enchère.
+
 Dans ce qui suit, `admin` désigne le compte courant.
 
 Prérequis:
 * Créer un nouvel utilisateur nommé `buyer` avec un nouveau faucet.json
 
-Instructions:
-
-* Déployer le contrat `nft` avec le getter en l'initialisant avec l'adresse courante `admin` (`completium-cli show account`).
-* Créer le token ayant pour identifiant `24` et appartenant à l'adresse `admin` dans le contrat `nft` en appelant l'entrée `mint`.
-* Déployer le contract `auction` mettant aux enchères le token `24`.
-* Appeler l'entrée `upforsale` avec un prix de vente de `10tz`.
-* Changer de compte courant et selectionner `buyer`.
-* Enchérir à `12tz` en appelant l'entrée `bid` (constater qu'une valeur strictement inferieur à 10tz fait échouer l'appel)
-* Appeler `claim` une fois l'enchère finie et constater le changement effectif de propriétaire du token.
+Editer le fichier [exec_auction.sh](./contratcs/exec_auction.sh) et remplacer `<YOUR_ALIAS>` avec l'alias de votre compte établi dans l'[exercice 1](#exercice-1) de la partie *Bases de la syntaxe* :
 
 ```sh
 #completium-cli import faucet faucet_buyer.json as buyer
@@ -217,6 +216,17 @@ completium-cli call auction --entry bid --amount 12tz --force
 sleep 180
 completium-cli call auction --entry claim --force
 ```
+
+Ce script consiste à :
+
+* déployer le contrat `nft` avec le getter en l'initialisant avec l'adresse courante `admin` (`completium-cli show account`).
+* créer le token ayant pour identifiant `24` et appartenant à l'adresse `admin` dans le contrat `nft` en appelant l'entrée `mint`.
+* déployer le contract `auction` mettant aux enchères le token `24`.
+* appeler l'entrée `upforsale` avec un prix de vente de `10tz`.
+* changer de compte courant et selectionner `buyer`.
+* enchérir à `12tz` en appelant l'entrée `bid` (constater qu'une valeur strictement inferieur à 10tz fait échouer l'appel)
+* appeler `claim` une fois l'enchère finie et constater le changement effectif de propriétaire du token.
+
 
 # Vérification formelle
 
