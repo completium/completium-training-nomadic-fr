@@ -227,6 +227,10 @@ Ce script consiste à :
 * enchérir à `12tz` en appelant l'entrée `bid` (constater qu'une valeur strictement inferieur à 10tz fait échouer l'appel)
 * appeler `claim` une fois l'enchère finie et constater le changement effectif de propriétaire du token.
 
+Exécuter le script avec la commande :
+
+`sh ./contracts/exec_auction.sh`
+
 
 # Vérification formelle
 
