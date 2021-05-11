@@ -183,12 +183,7 @@ Modifier le contrat d’enchère `auction.arl` de façon à ce qu’il interagis
 
 ## Exercice 2
 
-L'objectif est de :
-* déployer les contrats `auction.arl` et `nft.arl`
-* créer un token 
-* le mettre aux enchères 
-* placer une enchère avec un compte dédié
-* enfin transférer la propriété au gagnant de l'enchère.
+L'objectif est d'observer dans l'indexer Better Call Dev les sous-transactions générées par les appels à `upforsale` et `claim`.
 
 Dans ce qui suit, `admin` désigne le compte courant.
 
