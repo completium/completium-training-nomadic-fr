@@ -175,7 +175,7 @@ Modifier le contrat d’enchère `auction.arl` de façon à ce qu’il interagis
   * Ce point d'entré doit échouer si l'appelant n'est pas l'addresse du contrat `nft` ET si l'adresse en argument n'est pas l'adresse du déclencheur initiale de l'operation (constante `source` en archetype).
   * Dans le point d'entrée `upforsale`, ajouter un appel au getter `getOwner` du contrat `nft` avec comme callback le point d'entrée `checkowner`.
 * Autoriser le contrat d’enchère à effectuer le transfert :
-  * Dans le point d'entrée `updforsale`, ajouter un appel au point d'entré `approve` du contrat `nft`.
+  * Dans le point d'entrée `upforsale`, ajouter un appel au point d'entré `approve` du contrat `nft`.
   * Les arguments de `approve` sont l'adresse de ce contrat (`selfaddress`) et l'identifiant du token (`tokenid`) pour approver ce contrat à transférer ce token.
 * Transférer le token au gagnant de l’enchère :
   * Dans le point d'entrée `claim`, ajouter un appel au point d'entré `%transfer` au contrat `nft` dans l'entrée `claim`, après le transfert de fonds à l'ex-propriétaire.
